@@ -1,0 +1,486 @@
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.filterActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-border);
+}
+
+/* ---------- Resumo / Estatísticas ---------- */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.statCard {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f7;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+}
+
+/* ---------- Alternador de Visualização ---------- */
+.viewBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+  gap: var(--space-2);
+}
+
+.viewTitle {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.viewToggles {
+  display: inline-flex;
+  background: var(--gray-100);
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  gap: 2px;
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  border-radius: calc(var(--radius-sm) - 2px);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.viewBtn:hover {
+  color: var(--color-text);
+}
+
+.activeViewBtn {
+  background: #ffffff;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Tabela por Dia ---------- */
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  text-align: left;
+  font-size: var(--fs-sm);
+}
+
+.table th {
+  padding: 10px 12px;
+  color: var(--color-text-muted);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.table tfoot td {
+  padding: 14px 12px;
+  border-top: 2px solid var(--color-border);
+  background: var(--gray-50);
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+/* ---------- Lista de registros ---------- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.recordItem {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f7;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.recordItem:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.recordDate {
+  width: 58px;
+  text-align: center;
+  background: var(--color-primary-50);
+  border-radius: var(--radius);
+  padding: 8px 4px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.recordDay {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.recordMonth {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.recordMain {
+  min-width: 0;
+}
+
+.recordHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.colabName {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.colabMat {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.badgeOk {
+  background: var(--color-success-50);
+  color: var(--color-success);
+}
+
+.badgeSobra {
+  background: var(--color-warning-50);
+  color: var(--color-warning);
+}
+
+.badgeFalta {
+  background: var(--color-danger-50);
+  color: var(--color-danger);
+}
+
+.recordSub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.recordSub span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.recordValues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 8px;
+  font-size: var(--fs-sm);
+}
+
+.recordValues span {
+  color: var(--color-text-muted);
+}
+
+.recordValues b {
+  color: var(--color-text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.recordRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cashBox {
+  text-align: right;
+}
+
+.cashLabel {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.cashValue {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--color-success);
+}
+
+.itemActions {
+  display: flex;
+  gap: 4px;
+}
+
+.actionBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+}
+
+.actionBtn:hover {
+  background: var(--gray-100);
+  color: var(--color-text);
+}
+
+.btnDelete:hover {
+  background: var(--color-danger-50);
+  color: var(--color-danger);
+}
+
+/* ---------- Vazio ---------- */
+.emptyCard {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-3);
+  border-radius: 20px;
+  background: var(--gray-100);
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Modal de Detalhes ---------- */
+.detailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.detailCard {
+  background: var(--gray-50);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.detailCash {
+  background: var(--color-success-50);
+  grid-column: 1 / -1;
+}
+
+.detailCash strong {
+  font-size: 22px;
+}
+
+.detailFull {
+  grid-column: 1 / -1;
+}
+
+.detailLabel {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detailObs {
+  white-space: pre-wrap;
+  font-size: var(--fs-sm);
+  color: var(--color-text-soft);
+  margin-top: 4px;
+}
+
+.previewSection {
+  margin-top: var(--space-2);
+}
+
+.previewSection h4 {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-text-soft);
+}
+
+.zoomableImg {
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: zoom-in;
+  transition: transform var(--transition);
+}
+
+.zoomableImg:hover {
+  transform: scale(1.01);
+}
+
+.sigPreview {
+  max-height: 160px;
+}
+
+/* Modal Excluir */
+.deleteConfirm {
+  text-align: center;
+  padding: var(--space-2) 0;
+}
+
+.deleteWarningIcon {
+  font-size: 40px;
+  margin-bottom: var(--space-3);
+}
+
+.deleteConfirm p {
+  font-size: var(--fs-base);
+  margin-bottom: 8px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 960px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .filterGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statsGrid > :first-child {
+    grid-column: auto;
+  }
+
+  .table {
+    min-width: 650px;
+  }
+
+  .recordItem {
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+  }
+
+  .recordRight {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed var(--color-border);
+    padding-top: 10px;
+  }
+
+  .cashBox {
+    text-align: left;
+  }
+
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}

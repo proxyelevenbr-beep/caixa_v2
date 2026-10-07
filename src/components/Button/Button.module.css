@@ -1,0 +1,117 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 48px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: var(--fs-base);
+  white-space: nowrap;
+  user-select: none;
+  transition: transform 0.1s ease, box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.icon {
+  display: inline-flex;
+  font-size: 1.15em;
+}
+
+/* ---------- Tamanhos ---------- */
+.sm {
+  height: 38px;
+  padding: 0 var(--space-3);
+  font-size: var(--fs-sm);
+  border-radius: 10px;
+}
+
+.md {}
+
+.lg {
+  height: 58px;
+  padding: 0 var(--space-6);
+  font-size: var(--fs-lg);
+  border-radius: 14px;
+}
+
+.block {
+  width: 100%;
+}
+
+.iconOnly {
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+/* ---------- Variantes ---------- */
+.primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-bright));
+  color: #fff;
+  box-shadow: var(--shadow-primary);
+}
+
+.primary:hover:not(:disabled) {
+  box-shadow: 0 12px 28px rgba(30, 58, 138, 0.38);
+}
+
+.success {
+  background: var(--gradient-success);
+  color: #fff;
+  box-shadow: var(--shadow-success);
+}
+
+.success:hover:not(:disabled) {
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.38);
+}
+
+.danger {
+  background: var(--gradient-danger);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.25);
+}
+
+.dangerSoft {
+  background: var(--color-danger-50);
+  color: var(--color-danger);
+}
+
+.dangerSoft:hover:not(:disabled) {
+  background: var(--color-danger-100);
+}
+
+.ghost {
+  background: var(--color-surface);
+  color: var(--color-text-soft);
+  border: 1.5px solid var(--color-border);
+}
+
+.ghost:hover:not(:disabled) {
+  border-color: var(--gray-300);
+  background: var(--gray-50);
+}
+
+.white {
+  background: #fff;
+  color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Spinner ---------- */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid currentColor;
+  border-right-color: transparent;
+  animation: spin 0.7s linear infinite;
+}

@@ -1,0 +1,260 @@
+.ruleBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  color: #92400e;
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.ruleIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ruleText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.periodRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.inputsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.shortcuts {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: flex-end;
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--color-border);
+}
+
+/* ---------- Card Gigante do Total ---------- */
+.heroTotal {
+  background: linear-gradient(135deg, #0f2a6b 0%, var(--color-primary) 50%, #15803d 130%);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  margin: var(--space-4) 0;
+}
+
+.heroTotal::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.heroHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.2);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.heroPeriod {
+  font-size: var(--fs-sm);
+  opacity: 0.85;
+}
+
+.heroValueRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 12px 0 8px;
+}
+
+.heroCurrency {
+  font-size: 28px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.heroAmount {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.heroNote {
+  font-size: var(--fs-sm);
+  opacity: 0.85;
+  margin-top: var(--space-2);
+}
+
+/* ---------- Grid de Cards Informativos ---------- */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statLabel {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.statIcon {
+  font-size: 18px;
+}
+
+.statValue {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.statSub {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Tabela por Dia ---------- */
+.noDataText {
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--space-6) 0;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  text-align: left;
+  font-size: var(--fs-sm);
+}
+
+.table th {
+  padding: 10px 12px;
+  color: var(--color-text-muted);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.table tfoot td {
+  padding: 14px 12px;
+  border-top: 2px solid var(--color-border);
+  background: var(--gray-50);
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+/* Erro */
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-danger-50);
+  border-color: var(--color-danger-100);
+  color: var(--color-danger);
+  margin-top: var(--space-4);
+}
+
+.errorIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 960px) {
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .inputsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroAmount {
+    font-size: 34px;
+  }
+
+  .heroCurrency {
+    font-size: 20px;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    min-width: 680px;
+  }
+}

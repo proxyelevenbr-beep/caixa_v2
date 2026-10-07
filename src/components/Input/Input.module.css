@@ -1,0 +1,150 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-soft);
+}
+
+.req {
+  color: var(--color-danger);
+}
+
+.opt {
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: var(--fs-xs);
+}
+
+.control {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 14px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--fs-md); /* 16px evita zoom automático no iOS */
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.input::placeholder {
+  color: var(--gray-400);
+}
+
+.input:focus {
+  border-color: var(--color-primary-bright);
+  box-shadow: var(--focus-ring);
+}
+
+.withRightElement {
+  padding-right: 48px;
+}
+
+.rightElement {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.input[readonly] {
+  background: var(--gray-50);
+  color: var(--color-text-soft);
+  font-weight: 600;
+}
+
+.input[type='date'] {
+  min-width: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.textarea {
+  height: auto;
+  min-height: 96px;
+  padding: 12px 14px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+
+/* ---------- Moeda ---------- */
+.currency {
+  padding-left: 46px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.prefix {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.lg {
+  height: 58px;
+  font-size: var(--fs-xl);
+}
+
+.lg.currency {
+  padding-left: 52px;
+}
+
+.prefixLg {
+  font-size: var(--fs-lg);
+}
+
+/* ---------- Estados ---------- */
+.success {
+  border-color: var(--color-success);
+  background: var(--color-success-50);
+}
+
+.hasError {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+}
+
+.hasError:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.14);
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  animation: shake 0.3s;
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: var(--fs-xs);
+}

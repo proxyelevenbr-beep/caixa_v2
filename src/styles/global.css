@@ -1,0 +1,131 @@
+/* =========================================================
+   ESTILOS GLOBAIS
+   ========================================================= */
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+::selection {
+  background: var(--color-primary-100);
+  color: var(--color-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-bright);
+  outline-offset: 2px;
+}
+
+/* ---------- Layout autenticado ---------- */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-top {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--gradient-primary);
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.25);
+}
+
+.app-main {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) 64px;
+  flex: 1;
+}
+
+/* ---------- Cabeçalho de página ---------- */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.page-header h2 {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* ---------- Utilitários ---------- */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.text-success { color: var(--color-success); }
+.text-danger { color: var(--color-danger); }
+.text-warning { color: var(--color-warning); }
+.text-muted { color: var(--color-text-muted); }
+.tabular { font-variant-numeric: tabular-nums; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ---------- Animações ---------- */
+.page-enter {
+  animation: pageEnter 0.35s var(--ease) both;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: none; }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 640px) {
+  .app-main {
+    padding: var(--space-4) var(--space-3) calc(var(--bottom-nav-height) + 32px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
