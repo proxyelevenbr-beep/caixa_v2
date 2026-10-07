@@ -177,7 +177,7 @@ export default function NovoFechamento() {
     try {
       const registro = await criarFechamento(form, user);
       if (registro._pendente) {
-        toast.warning(
+        (toast.warning || toast.info)(
           `Salvo localmente (offline). Será enviado à nuvem quando a conexão retornar.`
         );
       } else {

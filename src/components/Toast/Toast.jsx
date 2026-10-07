@@ -16,6 +16,7 @@ const ToastContext = createContext(null);
 const ICONS = {
   success: <FiCheckCircle />,
   error: <FiAlertTriangle />,
+  warning: <FiAlertTriangle />,
   info: <FiInfo />,
 };
 
@@ -47,6 +48,7 @@ export function ToastProvider({ children }) {
       dismiss,
       success: (msg, duration) => show(msg, 'success', duration),
       error: (msg, duration) => show(msg, 'error', duration ?? 5000),
+      warning: (msg, duration) => show(msg, 'warning', duration ?? 4500),
       info: (msg, duration) => show(msg, 'info', duration),
     }),
     [show, dismiss]

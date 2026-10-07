@@ -29,6 +29,7 @@
 
 .success { background: var(--gradient-success); }
 .error { background: var(--gradient-danger); }
+.warning { background: linear-gradient(135deg, #d97706, #f59e0b); }
 .info { background: var(--gradient-primary); }
 
 .icon {
