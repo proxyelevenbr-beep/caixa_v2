@@ -176,7 +176,15 @@ export default function NovoFechamento() {
     setSaving(true);
     try {
       const registro = await criarFechamento(form, user);
-      toast.success(`Fechamento de ${registro.colaboradorNome} salvo! Dinheiro: ${formatCurrency(registro.valorDinheiro)}`);
+      if (registro._pendente) {
+        toast.warning(
+          `Salvo localmente (offline). Será enviado à nuvem quando a conexão retornar.`
+        );
+      } else {
+        toast.success(
+          `Fechamento de ${registro.colaboradorNome} salvo na nuvem! Dinheiro: ${formatCurrency(registro.valorDinheiro)}`
+        );
+      }
       setFrequencia((prev) => ({
         ...prev,
         [registro.colaboradorMatricula]: (prev[registro.colaboradorMatricula] || 0) + 1,

@@ -380,6 +380,11 @@ export default function Historico() {
                     ) : (
                       <span className={`${styles.badge} ${styles.badgeOk}`}>Sem divergência</span>
                     )}
+                    {item._pendente && (
+                      <span className={`${styles.badge} ${styles.badgePendente}`} title="Salvo no dispositivo (offline). Será enviado à nuvem quando online.">
+                        🟡 Pendente Nuvem
+                      </span>
+                    )}
                   </div>
 
                   <div className={styles.recordSub}>
